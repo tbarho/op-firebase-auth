@@ -19,5 +19,6 @@ export function initialize(container, application) {
 
 export default {
   name: 'firebase-service',
+  after: 'simple-auth',
   initialize: initialize
 };
