@@ -1,3 +1,8 @@
-import FirebaseAdapter from 'op-firebase-auth/adapters/firebase';
+import DS from 'ember-data';
+import config from '../config/environment';
 
-export default FirebaseAdapter;
+/* globals Firebase */
+
+export default DS.FirebaseAdapter.extend({
+  firebase: new Firebase(config.firebase_url)
+});

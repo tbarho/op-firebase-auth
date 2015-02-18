@@ -42,5 +42,18 @@ module.exports = {
     }
 
     return '';
+  },
+  included: function included(app) {
+    this._super.included(app);
+
+    this.app.import({
+      development: app.bowerDirectory + '/firebase/firebase-debug.js',
+      production: app.bowerDirectory + '/firebase/firebase.js'
+    });
+
+    this.app.import({
+      development: app.bowerDirectory + '/emberfire/dist/emberfire.js',
+      production: app.bowerDirectory + '/emberfire/dist/emberfire.min.js'
+    });
   }
 };
