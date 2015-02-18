@@ -1,0 +1,28 @@
+
+<h2>Signin</h2>
+
+  <form {{action 'signinByEmail' on='submit'}}>
+
+    {{#if signinError}}
+      <span class="form-error">{{signinError}}</span>
+    {{/if}}
+    <div class="form-group has-icon email-group">
+      {{input value=email type="email" placeholder="Email"}}
+      <span class="input-icon email-icon"></span>
+      {{#if errorsText.email}}
+        <span class="input-error">{{errorsText.email}}</span>
+      {{/if}}
+    </div>
+    <div class="form-group has-icon password-group">
+      {{input value=password type="password" class="password-input" placeholder="Password"}}
+      <span class="input-icon password-icon"></span>
+      {{#if errorsText.password}}
+        <span class="input-error">{{errorsText.password}}</span>
+      {{/if}}
+    </div>
+
+    <button type="submit">
+      Signin
+    </button>
+
+  </form>
